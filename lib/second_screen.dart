@@ -12,20 +12,21 @@ class _SecondScreenState extends State<SecondScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SecondPage'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(40.0),
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/third');
-              },
-              child: const Text("push"),
-            ),
-          ],
+        title: Text('Second Screen')),
+      body: Column(children: [
+        ElevatedButton(
+          onPressed:(){
+            Navigator.pop(context);
+          },
+          child: Text('Pop'),
         ),
+        ElevatedButton(
+          onPressed: () {
+            Navigator.popAndPushNamed(context, '/third');
+          },
+          child: Text('PopAndPushNamed'),
+        ),
+      ],
       ),
     );
   }
